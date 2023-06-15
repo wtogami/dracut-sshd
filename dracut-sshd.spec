@@ -60,11 +60,13 @@ cp -r 99sshd-networkmanager %{buildroot}/usr/lib/dracut/modules.d/
 %doc example/90-networkd.conf
 
 %files networkmanager
+%dir /usr/lib/dracut/modules.d/99sshd-networkmanager/
 /usr/lib/dracut/modules.d/99sshd-networkmanager/module-setup.sh
 
 %changelog
 * Thu Jun 15 2023 Warren Togami <wtogami@gmail.com>
 - silence 99sshd-shadow-fixup because missing /etc/shadow is valid
+- rpm owns module directories to ensure clean uninstall
 
 * Wed Jun 14 2023 Warren Togami <wtogami@gmail.com> 
 - dracut-sshd-networkmanager subpackage
