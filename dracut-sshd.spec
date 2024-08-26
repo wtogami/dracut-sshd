@@ -5,7 +5,7 @@ Name:       {{{ git_dir_name }}}
 # cf. https://pagure.io/rpkg-util/issue/21#comment-601077
 #Version:    {{{ git_dir_version }}}
 Version:    0.6.7
-Release:    1%{?dist}
+Release:    1%{?dist}.networkmanager
 Summary:    Provide SSH access to initramfs early user space
 URL:        https://github.com/gsauthof/dracut-sshd
 License:    GPLv3+
