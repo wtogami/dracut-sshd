@@ -53,7 +53,6 @@ cp -r 99sshd-networkmanager %{buildroot}/usr/lib/dracut/modules.d/
 /usr/lib/dracut/modules.d/46sshd/sshd.service
 /usr/lib/dracut/modules.d/46sshd/motd
 /usr/lib/dracut/modules.d/46sshd/profile
-/usr/lib/dracut/modules.d/99sshd-shadow-fixup/module-setup.sh
 %config(noreplace) /usr/lib/dracut/modules.d/46sshd/sshd_config
 %doc README.md
 %doc example/20-wired.network
@@ -61,9 +60,13 @@ cp -r 99sshd-networkmanager %{buildroot}/usr/lib/dracut/modules.d/
 
 %files networkmanager
 %dir /usr/lib/dracut/modules.d/99sshd-networkmanager/
+/usr/lib/dracut/modules.d/99sshd-shadow-fixup/module-setup.sh
 /usr/lib/dracut/modules.d/99sshd-networkmanager/module-setup.sh
 
 %changelog
+* Mon Aug 26 2024 Warren Togami <wtogami@gmail.com>
+- require network-manager dracut module (fixes Fedora 40)
+
 * Thu Jun 15 2023 Warren Togami <wtogami@gmail.com>
 - silence 99sshd-shadow-fixup because missing /etc/shadow is valid
 - rpm owns module directories to ensure clean uninstall

@@ -12,7 +12,8 @@ check() {
 
 # called by dracut
 depends() {
-    return 0
+    # We depend on network-manager
+    echo network-manager
 }
 
 # called by dracut
